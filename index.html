@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="leftside">
+            <div class="odin">
+                <img src="./images/odin-lined.png" alt="" height="150px" width="100px">
+                <h1 style="color: white;">ODIN</h1>
+            </div>
+            <p style="color: azure;">Photo by <a href="">HaileeWest</a> on <a href="">Unsplash</a></p>
+        </div>
+        <div class="righside">
+            <div class="upper">
+           <div class="greyish-box">
+            <p>
+                This is not a real online service! You know you need something like this 
+                in your life to help you realize your deepest dreams.
+                <br>Sign up <i>now</i> to get started.
+                <br><br>You <i>know</i> you want to.
+            </p>
+           </div>
+           <div class="signup-box">
+            <p style="font-size: 30px;">Lets do this!</p>
+            <br>
+            <form  id="signupForm"  action="">
+            <table>
+                <tr>
+                    <td style="padding: 20px;"><label for="first_name">FIRST NAME</label><br>
+                        <input type="text" id="first_name" required style="height: 30px; width: 400px;"></td>
+
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td style="padding: 20px;"><label for="last_name">LAST NAME</label><br>
+                        <input type="text" id="last_name" required style="height: 30px; width: 400px;"></td>
+                </tr>
+
+                
+                <tr>
+                    <td style="padding: 20px;"><label for="email_address">EMAIL</label><br>
+                        <input type="email" id="email_address" required style="height: 30px; width: 400px;"></td>
+
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td style="padding: 20px;"><label for="phone_number">PHONE NUMBER</label><br>
+                        <input type="tel" id="phone_number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" style="height: 30px; width: 400px;"></td>
+                </tr>
+
+
+                <tr>
+                    <td style="padding: 20px;"><label for="password1">PASSWORD</label><br>
+                        <input type="password" id="password1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required style="height: 30px; width: 400px;"></td>
+
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td style="padding: 20px;"><label for="password2">CONFIRM PASSWORD</label><br>
+                        <input type="password" id="password2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required style="height: 30px; width: 400px;"></td>
+                </tr>
+            </table>
+
+           <div id="unmatch"></div>
+           <br><br><br>
+            <button type="submit">Create Account</button>
+        </form>
+        <br><br>
+        <p style="font-size: 25px;">Already have an account? <span><a href="" style="color: green; text-decoration: none;"><b>Log in</b></a></span></p>
+           </div>
+        </div>
+
+        
+        </div>
+    </div>
+    
+    <script>
+
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            
+            const p1 = document.getElementById('password1').value;
+            const p2 = document.getElementById('password2').value;
+
+            if (p1 !== p2) {
+                // document.getElementById('unmatch').textContent = "*Passwords don't match";
+                document.getElementById('unmatch').innerHTML = "<span style='color: red;'>*Passwords don't match</span>";
+
+                document.getElementById('password1').style.borderColor = 'red';
+                document.getElementById('password2').style.borderColor = 'red';
+            } else {
+        
+              
+                 document.getElementById("signupForm").submit();
+            }
+        });
+
+    </script>
+</body>
+</html>
